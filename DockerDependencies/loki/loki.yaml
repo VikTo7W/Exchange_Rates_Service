@@ -1,0 +1,44 @@
+auth_enabled: false
+
+server:
+  http_listen_port: 3100
+
+common:
+  path_prefix: /loki
+  replication_factor: 1
+  ring:
+    kvstore:
+      store: inmemory
+
+schema_config:
+  configs:
+    - from: 2023-01-01
+      store: boltdb-shipper
+      object_store: filesystem
+      schema: v11
+      index:
+        prefix: index_
+        period: 24h
+
+storage_config:
+  boltdb_shipper:
+    active_index_directory: /loki/index
+    cache_location: /loki/cache
+    shared_store: filesystem
+  filesystem:
+    directory: /loki/chunks
+
+limits_config:
+  max_query_parallelism: 32
+  max_entries_limit_per_query: 50000
+  max_query_length: 24h
+  max_query_lookback: 24h
+
+query_range:
+  parallelise_shardable_queries: true
+
+frontend:
+  max_outstanding_per_tenant: 2048
+
+querier:
+  max_concurrent: 32

@@ -1,0 +1,24 @@
+# Maven
+/app/target/
+**/target/
+
+# IntelliJ
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# VS Code
+.vscode/
+
+# Mac
+.DS_Store
+
+# Logs
+*.log
+
+# Env
+.env
+
+# Docker
+*.tar

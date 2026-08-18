@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS "Filters" (
+     "id" INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+     "source_id" INTEGER NOT NULL,
+     "key_path" TEXT NOT NULL,
+     "name" TEXT NOT NULL,
+     "value_type" JSON_VALUE NOT NULL
+);

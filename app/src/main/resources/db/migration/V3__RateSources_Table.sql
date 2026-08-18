@@ -1,0 +1,20 @@
+CREATE TABLE IF NOT EXISTS "RateSources" (
+     "id" INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+     "name" TEXT NOT NULL,
+     "rate_endpoint_url" TEXT NOT NULL,
+     "rate_endpoint_type" REQUEST_TYPE NOT NULL,
+     "rate_endpoint_payload_type" PAYLOAD_TYPE NOT NULL,
+     "rate_endpoint_payload" TEXT,
+     "payload_currency_format" TEXT,
+     "payload_from_currency_path" TEXT,
+     "payload_to_currency_path" TEXT,
+     "payload_orders_type_key_path" TEXT,
+     "payload_buy_orders_value" TEXT,
+     "payload_sell_orders_value" TEXT,
+     "rate_endpoint_headers" JSONB,
+     "rate_array_size" INTEGER NOT NULL,
+     "rate_key_path" TEXT NOT NULL,
+     "buy_orders_array_key_path" TEXT,
+     "sell_orders_array_key_path" TEXT,
+     "status" SOURCE_STATUS NOT NULL
+);

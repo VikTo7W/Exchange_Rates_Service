@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS "FixRates" (
+      "id" BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+      "setting_id" INTEGER NOT NULL,
+      "rate" NUMERIC(30,15) NOT NULL,
+      "collected_at" TIMESTAMPTZ NOT NULL
+);

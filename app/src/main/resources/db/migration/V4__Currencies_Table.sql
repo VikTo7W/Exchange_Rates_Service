@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS "Currencies" (
+      "id" INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+      "name" TEXT NOT NULL,
+      "ticker" TEXT NOT NULL,
+      "type" CURRENCY_TYPE NOT NULL,
+      "symbol" TEXT NOT NULL,
+      "rate" INTEGER NOT NULL
+);
